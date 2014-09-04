@@ -4,8 +4,8 @@
 
 
 <p><b>Product Name:</b> <%= @product.name %> 
-	<b>Description:</b> <%= @product.description %></p>
-	<b>Price</b> <%= @product.price_in_cents %><p>
+<p><b>Description:</b> <%= @product.description %></p>
+<p><b>Price:</b> $<%= @product.formatted_price %><p>
 
 <% if current_user %>
 <h3>Reviews</h3>

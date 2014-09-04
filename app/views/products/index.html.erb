@@ -1,23 +1,38 @@
-<h1>Listing products</h1>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+<img src="http://s18.postimg.org/61z0hpf7t/logo.png">
+
+<div id="tabs"> 
+	<ul>
+  		<li><a href="/products"><span>Home</span></a></li>
+  		<li><a href="/products/new/"><span>Add New Product</span></a></li>
+  		<li><a href="/sessions/new/"><span>Log In</span></a></li>
+  		<li><a href="/users/new/"><span>Sign Up</span></a></li>
+	</ul> 
+</div>
+</hr>
+<h1><font color="white">.</font></h2>
+<h1>New Products</h1>
+
 <table>
-<tr>
-<th>Name</th>
-<th>Price</th>
-<th>Description</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
+	<tr>
+		<th><font color="pink">Name</font></th>
+		<th><font color="pink">Price</font></th>
+		<th><font color="pink">Description</font></th>
+		<th><font color="pink">Edit Options</font></th>
+		<th></th>
+		<th></th>
+	</tr></font>
+
 <% @products.each do |product| %>
-<tr>
-<td><%= product.name %></td>
-<td><%= product.formatted_price %></td>
-<td><%= product.description %></td>
-<td><%= link_to 'Show', product %></td>
-<td><%= link_to 'Edit', edit_product_path(product) %></td>
-<td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
+	<tr>
+		<th><%= product.name %></th>
+		<th>$<%= product.formatted_price %></th>
+		<th><%= product.description %></th>
+		<th><%= link_to 'Show', product %></th>
+		<th><%= link_to 'Edit', edit_product_path(product) %></th>
+		<th><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+	</tr>
 <% end %>
 </table>
 <br />
-<%= link_to 'New Product', new_product_path %>
